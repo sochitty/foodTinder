@@ -1,0 +1,13 @@
+.like{
+    float: right;
+}
+
+.dislike{
+    float: left;
+}
+
+.clear-div {
+    content: "";
+    clear: both;
+    display: table;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
+    
     <!--MATERIALIZE CSS FRAMEWORK-->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -14,7 +15,8 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- MATERIALIZE FRAMEWORK END -->
-
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     
@@ -38,20 +40,22 @@
         </ul>
       </div>
         <!-- CARD -->
+        <div class='container'>
         <div class="row">
           <div class="col s12 m6">
             <div class="card">
               <div class="card-image">
-                <img src="https://loremflickr.com/320/240">
-                <span class="card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <img src="https://loremflickr.com/320/240/restaurant">
+                <span class="card-title">Insert Restaraunt Name Here</span>
               </div>
-              <div class="card-content">
-                <p>I am a very simple cat. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                <p>I am a very simple app. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                <a class="btn-floating btn-med waves-effect waves-light red vote dislike" data-like='dislike'><i class="material-icons">indeterminate_check_box</i></a>
+                <a class="btn-floating btn-med waves-effect waves-light red vote like" data-like='like'><i class="material-icons">add</i></a>
+                <div class="clear-div"></div>
               </div>
             </div>
           </div>
         </div>
-      
+        </div>
 </body>
 </html>
