@@ -1,3 +1,14 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCkd_pu_cNIG-m9SslOM5VoErwGr3vzt8Q",
+  authDomain: "foodtinder-d04db.firebaseapp.com",
+  databaseURL: "https://foodtinder-d04db.firebaseio.com",
+  projectId: "foodtinder-d04db",
+  storageBucket: "foodtinder-d04db.appspot.com",
+  messagingSenderId: "770202764576"
+};
+firebase.initializeApp(config);
+
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(elems, {
