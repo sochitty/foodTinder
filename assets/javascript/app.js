@@ -7,7 +7,10 @@ var config = {
   storageBucket: "foodtinder-d04db.appspot.com",
   messagingSenderId: "770202764576"
 };
-firebase.initializeApp(config);
+//firebase.initializeApp(config);
+
+var likedRestaurants = [];
+var dislikedRestaurants = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.fixed-action-btn');
@@ -27,5 +30,31 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Here is your data, sir!' + data);
   });
+});
 
+function populateRestaurants(search) {
+
+
+  var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + search + 
+    "&limit=50";
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    headers: {
+      'Authorization':'Bearer TORyea5OVqnWWzs9IHpLAqrzf7DLddQUfO9lKmjIwim5Ha8rFCx9c0ZYc8WDO2ZtQX8lCoJL7rdaTiywiLCJAkMYHuzGYXXGkmCeELnm0BQMk_j_C-qbzT8REyLrW3Yx',
+  }  }).then(function(response) {
+    console.log(response);
+    //var movieData = JSON.stringify(response);
   });
+}
+
+populateRestaurants("Austin");
+
+$(".vote").on("click", function() {
+  if ($(this).attr("data-like") == "like") {
+    likedRestaurants.append("current restaurant");
+  } else {
+    dislikedRestaurants.append("current restuarant");
+  }
+});
