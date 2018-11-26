@@ -16,7 +16,7 @@
 }
 
 .card {
-    padding: 10px;
+    padding: 5px;
 }
 
 #restName {
@@ -31,19 +31,29 @@
     text-align: center;
 
 }
-/* @media screen and (max-width: 1500px) {
+
+#restaurantImage {
+    top: 8px
+}
+
+/* #restaurantImage {
+    height: 400px%;
+    width: 600px;
+} */
+
+@media screen and (min-width: 600px) {
 .card{
     position: relative;
     top: 65px;
-    left: 210px;
+    left: 150px;
 }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 900px) {
     .card{
         position: relative;
         top: 65px;
-        left: 0px;
-        right:900px;
+        left: 195px;
     }
-} */
+    }
+
