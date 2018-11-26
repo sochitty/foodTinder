@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|Sigmar+One');
+
 .like{
     float: right;
+    
 }
 
 .dislike{
@@ -11,3 +14,36 @@
     clear: both;
     display: table;
 }
+
+.card {
+    padding: 10px;
+}
+
+#restName {
+    font-size: 250%;
+    font-family: 'Sigmar One', cursive;
+    color: yellow;
+}
+
+#rating, #genre, #price {
+    font-size: 25px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+
+}
+/* @media screen and (max-width: 1500px) {
+.card{
+    position: relative;
+    top: 65px;
+    left: 210px;
+}
+}
+
+@media screen and (max-width: 400px) {
+    .card{
+        position: relative;
+        top: 65px;
+        left: 0px;
+        right:900px;
+    }
+} */
