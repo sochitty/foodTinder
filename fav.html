@@ -18,20 +18,48 @@
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     
-    <!-- JS -->
-    <script src='assets/javascript/app.js'></script>
+
+    <!-- Linking Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+
     <title>Document</title>
 </head>
 <body>
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large black" href='index.html'>
-          <i class="large material-icons">local_dining</i>
-        </a>
-        <ul>
-          <!-- NAV BAR -->
-          <li><a class="btn-floating green" href='search.html'><i class="material-icons">search</i></a></li>
-          <li><a class="btn-floating red"><i class="material-icons">favorite</i></a></li>
-        </ul>
+  <div class="fixed-action-btn">
+      <a class="btn-floating btn-large black" href='index.html'>
+        <i class="large material-icons">local_dining</i>
+      </a>
+      <ul>
+        <!-- NAV BAR -->
+        <li><a class="btn-floating green" href='search.html'><i class="material-icons">search</i></a></li>
+        <li><a class="btn-floating red"><i class="material-icons">favorite</i></a></li>
+      </ul>
+  </div>
+
+  <div class="row" id="favsGoHere">
+
+    <!-- <div class="col s4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="images/office.jpg">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Populate Restaurant Name?<i class="material-icons right">restaurant</i></span>
+          <p><a href="#">Restaurant Website Link?</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Restaurant Name<i class="material-icons right">close</i></span>
+          <p>Details about the Restaurant:</p>
+        </div>
+        <div class="card small">
+
+        </div>
       </div>
+    </div> -->
+
+  </div>
+
+  <!-- JS -->
+  <script src='assets/javascript/fav.js'></script>
 </body>
 </html>

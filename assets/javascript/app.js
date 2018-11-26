@@ -86,7 +86,7 @@ function sortRestaurant() {
   } else {
     dislikedRestaurants.push(allRestaurants[restSelector]);
   }
-  if (restSelector < allRestaurants.length) {
+  if (restSelector < allRestaurants.length - 1) {
     restSelector++;
   } else {
     restSelector = 0;
