@@ -31,27 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     //end nav bar
 });
 
-function getHealthScore() {
-    $.ajax({
-    url: "https://data.austintexas.gov/resource/nguv-n54k.json",
-    type: "GET",
-    data: {
-        "$limit" : 5000,
-        "$$app_token" : "i03YK9NGI8Vg6d6pqTTHndSeF"
-    }
-    }).done(function(data) {
-        console.log('Here is your data, sir!' + data);
-    });
-}
-//getHealthScore();
-
-
-// $('.grid').masonry({
-//     // options...
-//     itemSelector: '.grid-item',
-//     columnWidth: 200
-//   });
-
 function populateLikes() {
     for (i = 0; i < likedRestaurants.length; i++) {
 
@@ -82,9 +61,10 @@ function populateLikes() {
         cardContentSpan.attr("id", "cardContentSpan" + i);
 
         var spanI = $("<i>");
-        spanI.addClass("material-icons right");
+        spanI.addClass("material-icons right getHealth");
         spanI.text("restaurant");
         spanI.attr("id", "spanI" + i);
+        spanI.attr("data-name", likedRestaurants[i].name);
 
         var contentP = $("<p>");
         contentP.attr("id", "contentP" + i);
@@ -109,13 +89,25 @@ function populateLikes() {
         revealI.text("close");
         revealI.attr("id", "revealI" + i);
 
-        var revealP = $("<p>");
-        revealP.text("Details about the restuarant");
-        revealP.attr("id", "revealP" + i);
+        var revealRating = $("<p>");
+        revealRating.text(likedRestaurants[i].rating + "/5");
+        revealRating.attr("id", "revealRating" + i);
 
-        // var cardSmall = $("<div>");
-        // cardSmall.addClass("card small");
-        // cardSmall.attr("id", "cardSmall" + i);
+        var revealGenre = $("<p>");
+        revealGenre.text(likedRestaurants[i].categories[0].title);
+        revealGenre.attr("id", "revealGenre" + i);
+
+        var revealPrice = $("<p>");
+        revealPrice.text(likedRestaurants[i].price);
+        revealPrice.attr("id", "revealPrice" + i);
+
+        var revealAddress = $("<p>");
+        revealAddress.text(likedRestaurants[i].location.display_address);
+        revealAddress.attr("id", "revealAddress" + i);
+
+        var revealHealthScore = $("<p>");
+        revealHealthScore.text("");
+        revealHealthScore.attr("id", likedRestaurants[i].name);
 
         $("#favsGoHere").append(colDiv);
         $("#colDiv" + i).append(cardDiv);
@@ -130,7 +122,31 @@ function populateLikes() {
         $("#contentP" + i).append(pLink);
         $("#cardRevealDiv" + i).append(cardRevealSpan);
         $("#cardRevealSpan" + i).append(revealI);
-        $("#cardRevealDiv" + i).append(revealP);
+        $("#cardRevealDiv" + i).append(revealRating);
+        $("#cardRevealDiv" + i).append(revealGenre);
+        $("#cardRevealDiv" + i).append(revealPrice);
+        $("#cardRevealDiv" + i).append(revealAddress);
+        $("#cardRevealDiv" + i).append(revealHealthScore);
     }
 }
+
+function getHealthScore(search) {
+    var queryUrl = "https://data.austintexas.gov/resource/nguv-n54k.json?$q=" + search;
+    $.ajax({
+    url: queryUrl,
+    type: "GET",
+    data: {
+        "$limit" : 1,
+        "$$app_token" : "i03YK9NGI8Vg6d6pqTTHndSeF"
+    }
+    }).done(function(data) {
+        $("#" + search).text("Health Score: " + data[0].score);
+    });
+}
+
+$(document).on("click", ".getHealth", function () {
+    getHealthScore($(this).data("name"));
+    }
+);
+
 

@@ -19,14 +19,19 @@ var dislikedRestaurants = [];
 var restSelector = 0;
 
 database.ref().on("value", function(snapshot) {
-  likedRestaurants = snapshot.val().liked;
-  dislikedRestaurants = snapshot.val().disliked;
-  restSelector = snapshot.val().restSelector;
+  if (likedRestaurants.lenght > 0) {
+    likedRestaurants = snapshot.val().liked;
+  }
+  if (dislikedRestaurants.lenght > 0) {
+    dislikedRestaurants = snapshot.val().disliked;
+  }
+    restSelector = snapshot.val().restSelector;
 
 // If any errors are experienced, log them to console.
 }, function(errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.fixed-action-btn');
@@ -38,21 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //calling populat restaurants
   populateRestaurants("Austin");
-
-  function getHealthScore() {
-    $.ajax({
-      url: "https://data.austintexas.gov/resource/nguv-n54k.json",
-      type: "GET",
-      data: {
-        "$limit" : 5000,
-        "$$app_token" : "i03YK9NGI8Vg6d6pqTTHndSeF"
-      }
-    }).done(function(data) {
-      
-      console.log('Here is your data, sir!' + data);
-    });
-  }
-  //getHealthScore();
 });
 
 function handleResponse() {
@@ -93,7 +83,7 @@ function sortRestaurant() {
     restSelector++;
   } else {
     restSelector = 0;
-  console.log(restSelector);
+  }
   //load the next restaurant
   handleResponse();
   //store changes in database
