@@ -90,7 +90,6 @@ function sortRestaurant() {
     restSelector++;
   } else {
     restSelector = 0;
-  }
   console.log(restSelector);
   //load the next restaurant
   handleResponse();

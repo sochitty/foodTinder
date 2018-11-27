@@ -14,7 +14,6 @@ var likedRestaurants = [];
 
 database.ref().on("value", function(snapshot) {
     likedRestaurants = snapshot.val().liked;
-    console.log(likedRestaurants);
 
     //Populate the previously liked restaurants.
     populateLikes();
