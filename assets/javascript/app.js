@@ -1,3 +1,5 @@
+
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCkd_pu_cNIG-m9SslOM5VoErwGr3vzt8Q",
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     direction: 'left'
   });
   //end nav bar
+
 
   //calling populat restaurants
   populateRestaurants("Austin");

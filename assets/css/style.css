@@ -23,6 +23,8 @@
     font-size: 250%;
     font-family: 'Sigmar One', cursive;
     color: yellow;
+    background: rgba(0,0,0,0.3);
+    
 }
 
 #rating, #genre, #price {
@@ -30,6 +32,12 @@
     font-family: 'Dosis', sans-serif;
     text-align: center;
 
+}
+
+.card .card-content .card-title {
+    font-size: 18px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
 }
 
 #restaurantImage {
@@ -41,12 +49,49 @@
     width: 600px;
 } */
 
-@media screen and (min-width: 600px) {
+
+
+@media screen and (max-width: 390px) {
+    #restName {
+        font-size: 150%;
+    }
+
+   
+
+
+
+}
+
+@media screen and (max-width: 535px) {
+   
+    .row .col.s4 {
+        width: 100%;
+    }
+
+
+
+}
+
+@media screen and (min-width: 535px) {
+   
+    .row .col.s4 {
+        /* width: 50%; */
+        display: grid;
+    grid-template-columns: 210px 210px 210px;
+    grid-template-rows: 185px 185px;
+    }
+
+}
+
+
+/* @media screen and (min-width: 600px) {
 .card{
     position: relative;
     top: 65px;
     left: 150px;
 }
+
+
 }
 
 @media screen and (min-width: 900px) {
@@ -55,5 +100,5 @@
         top: 65px;
         left: 195px;
     }
-    }
+    } */
 

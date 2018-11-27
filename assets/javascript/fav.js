@@ -46,6 +46,13 @@ function getHealthScore() {
 }
 //getHealthScore();
 
+
+// $('.grid').masonry({
+//     // options...
+//     itemSelector: '.grid-item',
+//     columnWidth: 200
+//   });
+
 function populateLikes() {
     for (i = 0; i < likedRestaurants.length; i++) {
 
