@@ -104,3 +104,8 @@ function sortRestaurant() {
     restSelector: restSelector,
   });
 };
+
+$('#search').on('click', function(){
+  populateRestaurants();
+  
+});
