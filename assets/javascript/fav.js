@@ -107,7 +107,7 @@ function populateLikes() {
 
         var revealHealthScore = $("<p>");
         revealHealthScore.text("");
-        revealHealthScore.attr("id", likedRestaurants[i].name);
+        revealHealthScore.attr("id", likedRestaurants[i].name.replace(/ +/g, ""));
 
         $("#favsGoHere").append(colDiv);
         $("#colDiv" + i).append(cardDiv);
@@ -140,7 +140,7 @@ function getHealthScore(search) {
         "$$app_token" : "i03YK9NGI8Vg6d6pqTTHndSeF"
     }
     }).done(function(data) {
-        $("#" + search).text("Health Score: " + data[0].score);
+        $("#" + search.replace(/ +/g, "")).text("Health Score: " + data[0].score);
     });
 }
 
@@ -148,5 +148,4 @@ $(document).on("click", ".getHealth", function () {
     getHealthScore($(this).data("name"));
     }
 );
-
 
