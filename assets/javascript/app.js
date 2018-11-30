@@ -98,3 +98,4 @@ $('#search').on('click', function(){
   populateRestaurants();
   
 });
+

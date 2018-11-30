@@ -5,59 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
+    
     <!--MATERIALIZE CSS FRAMEWORK-->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- MATERIALIZE FRAMEWORK END -->
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
     <!-- Linking Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <!-- MASONRY CDN -->
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
     <title>Document</title>
 </head>
 <body>
+   <!-- NAV BAR-->
   <div class="fixed-action-btn">
       <a class="btn-floating btn-large black" href='index.html'>
         <i class="large material-icons">menu</i>
       </a>
       <ul>
-        <!-- NAV BAR -->
         <li><a class="btn-floating green" href='login.html'><i class="material-icons">account_circle</i></a></li>
-        <li><a class="btn-floating red"><i class="material-icons">favorite</i></a></li>
+        <li><a class="btn-floating red" href='fav.html'><i class="material-icons">favorite</i></a></li>
       </ul>
+    </div>
+
+  <div class="container">
+    <input id='txtEmail' type='email' placeholder='email'>
+
+    <input id='txtPassword' type='password' placeholder='Password'>
+
+    <button id='btnLogin' class='btn btn-action'>
+      Log In
+    </button>
+
+    <button id='btnSignUp' class='btn btn-secondary'>
+      Sign Up
+    </button>
+
+    <button id='btnLogout' class='btn btn-action hide'>
+      Log Out
+    </button>
+
+    
   </div>
-<div class='container'>
-  <div class="row" id="favsGoHere">
-
-    <!-- <div class="col s4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="images/office.jpg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Populate Restaurant Name?<i class="material-icons right">restaurant</i></span>
-          <p><a href="#">Restaurant Website Link?</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Restaurant Name<i class="material-icons right">close</i></span>
-          <p>Details about the Restaurant:</p>
-        </div>
-        <div class="card small">
-
-        </div>
-      </div>
-    </div> -->
-
-  </div>
-  </div>
-
-  <!-- JS -->
-  <script src='assets/javascript/fav.js'></script>
 </body>
+<script src='assets/javascript/login.js'></script>
+
 </html>
