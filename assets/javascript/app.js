@@ -14,6 +14,8 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 var allRestaurants = [];
+var allGenres = [];
+var allPrices = [];
 var likedRestaurants = [];
 var dislikedRestaurants = [];
 var restSelector = 0;
@@ -45,7 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
   populateRestaurants("Austin");
 });
 
-function handleResponse() {
+// update the dom with restaurants from a new city
+$("#citySearch").on('submit', function(event) {
+  event.preventDefault();
+  populateRestaurants($("#searchVal").val());
+});
+
+//populates the dom with restaurants for sorting
+function nextRestaurant() {
   $("#restaurantImage").attr("src", allRestaurants[restSelector].image_url);
   $("#restName").text(allRestaurants[restSelector].name);
   $("#rating").text(allRestaurants[restSelector].rating + "/5");
@@ -65,7 +74,10 @@ function populateRestaurants(search) {
       'Authorization':'Bearer TORyea5OVqnWWzs9IHpLAqrzf7DLddQUfO9lKmjIwim5Ha8rFCx9c0ZYc8WDO2ZtQX8lCoJL7rdaTiywiLCJAkMYHuzGYXXGkmCeELnm0BQMk_j_C-qbzT8REyLrW3Yx',
   }  }).then(function(response) {
     allRestaurants = response.businesses;
-    handleResponse();
+    //load the first restaurant for sorting
+    nextRestaurant();
+    //populateGenres();
+    //populatePrices();
   });
 }
 
@@ -85,7 +97,7 @@ function sortRestaurant() {
     restSelector = 0;
   }
   //load the next restaurant
-  handleResponse();
+  nextRestaurant();
   //store changes in database
   database.ref().set({
     liked: likedRestaurants,
@@ -94,8 +106,29 @@ function sortRestaurant() {
   });
 };
 
+<<<<<<< HEAD
 $('#search').on('click', function(){
   populateRestaurants();
   
 });
+=======
+//future versions of the app will start with a sorting feature
+// of a unique list of genres to flip through before narrowing 
+// down to price and finally restaurants
+function populateGenres() {
+  for (i = 0; i < allRestaurants.length; i++) {
+    allGenres.push(allRestaurants[i].categories[0].title);
+  }
+  allGenres = [ ...new Set(allGenres) ];
+  console.log(allGenres);
+}
+
+function populatePrices() {
+  for (i = 0; i < allRestaurants.length; i++) {
+    allPrices.push(allRestaurants[i].price);
+  }
+  allPrices = [ ...new Set(allPrices) ];
+  console.log(allPrices);
+}
+>>>>>>> 997bf641f235da5cca3b919779c3684bf8eb69c1
 
