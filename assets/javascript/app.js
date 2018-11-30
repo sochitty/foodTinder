@@ -1,5 +1,4 @@
 
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCkd_pu_cNIG-m9SslOM5VoErwGr3vzt8Q",
@@ -106,12 +105,6 @@ function sortRestaurant() {
   });
 };
 
-<<<<<<< HEAD
-$('#search').on('click', function(){
-  populateRestaurants();
-  
-});
-=======
 //future versions of the app will start with a sorting feature
 // of a unique list of genres to flip through before narrowing 
 // down to price and finally restaurants
@@ -130,5 +123,3 @@ function populatePrices() {
   allPrices = [ ...new Set(allPrices) ];
   console.log(allPrices);
 }
->>>>>>> 997bf641f235da5cca3b919779c3684bf8eb69c1
-
